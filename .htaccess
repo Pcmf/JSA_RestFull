@@ -1,0 +1,49 @@
+# Turn rewrite engine on
+RewriteEngine on
+
+#POST do LOGIN 
+RewriteRule ^login index.php?url=login [L,QSA]
+RewriteRule ^users/([0-9/]+) index.php?url=users&user=$1 [L,QSA]
+RewriteRule ^users index.php?url=users [L,QSA]
+
+#rejeitar lead
+RewriteRule ^leads/rej/([0-9/]+) index.php?url=rej&lead=$1 [L,QSA]
+#não atende, agenda automatica lead
+RewriteRule ^leads/nat/([0-9/]+)/([0-9/]+) index.php?url=nat&user=$1&lead=$2 [L,QSA]
+#agenda manual lead
+RewriteRule ^leads/agm/([0-9/]+) index.php?url=agm&lead=$1 [L,QSA]
+ 
+RewriteRule ^leads/([0-9/]+)/([0-9/]+) index.php?url=leads&user=$1&id=$2 [L,QSA]
+RewriteRule ^leads/([0-9/]+) index.php?url=leads&user=$1 [L,QSA]
+RewriteRule ^getlead/([0-9/]+) index.php?url=getlead&user=$1 [L,QSA]
+RewriteRule ^getcount/([0-9/]+) index.php?url=getcount&user=$1 [L,QSA]
+
+RewriteRule ^procuracao index.php?url=procuracao [L,QSA]
+
+RewriteRule ^listadocs/([0-9/]+) index.php?url=listadocs&id=$1 [L,QSA]
+RewriteRule ^listadocs index.php?url=listadocs [L,QSA]
+
+RewriteRule ^agenda/([0-9/]+)/([0-9/]+) index.php?url=agenda&user=$1&lead=$2 [L,QSA]
+RewriteRule ^agenda/([0-9/]+)  index.php?url=agenda&user=$1 [L,QSA]
+#Aguardam documentos
+RewriteRule ^agdocs/([0-9/]+)/([0-9/]+) index.php?url=agdocs&user=$1&lead=$2 [L,QSA]
+RewriteRule ^agdocs/([0-9/]+)  index.php?url=agdocs&user=$1 [L,QSA]
+#Aguardam Pagamento
+RewriteRule ^agpag/([0-9/]+)/([0-9/]+) index.php?url=agpag&user=$1&lead=$2 [L,QSA]
+RewriteRule ^agpag/([0-9/]+)  index.php?url=agpag&user=$1 [L,QSA]
+
+#RewriteRule ^doc/([0-9/]+)/([0-9/]+) index.php?url=doc&lead=$1&linha=$2 [L,QSA]
+#RewriteRule ^docs/([0-9/]+)/([0-9/]+) index.php?url=docs&lead=$1&tipodoc=$2 [L,QSA]
+#RewriteRule ^docs/([0-9/]+) index.php?url=docs&lead=$1 [L,QSA]
+#RewriteRule ^docs index.php?url=docs [L,QSA]
+#RewriteRule ^savedocs/([0-9/]+) index.php?url=savedocs&lead=$1 [L,QSA]
+#RewriteRule ^getdata/([0-9a-zA-Z_/]+) index.php?url=getdata&tabela=$1 [L,QSA]
+#RewriteRule ^processos/([0-9/]+) index.php?url=processos&lead=$1 [L,QSA]
+#RewriteRule ^processos index.php?url=processos [L,QSA]
+#RewriteRule ^dashboard/([0-9/]+) index.php?url=dashboard&user=$1 [L,QSA]
+#RewriteRule ^dash index.php?url=dash [L,QSA]
+#RewriteRule ^mural/([0-9/]+) index.php?url=mural&user=$1 [L,QSA]
+#RewriteRule ^mural index.php?url=mural [L,QSA]
+#RewriteRule ^users index.php?url=users [L,QSA]
+
+
